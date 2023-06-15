@@ -5,8 +5,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Loading the saved model
-loaded_model = pickle.load(open("trained_model.sav", 'rb'))
+import os
+import pickle
+
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the file path
+model_path = os.path.join(current_dir, "trained_model.sav")
+
+# Load the trained model
+loaded_model = pickle.load(open(model_path, 'rb'))
 
 # Function for prediction
 def strength_prediction(input_data):
