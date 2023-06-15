@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 # Loading the saved model
 loaded_model = pickle.load(open("trained_model.sav", 'rb'))
 
-
 # Function for prediction
 def strength_prediction(input_data):
     # Reshape the input data as we are predicting for one instance
