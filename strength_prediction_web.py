@@ -3,9 +3,17 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define file paths
+model_path = os.path.join(current_dir, "trained_model.sav")
+csv_path = os.path.join(current_dir, "concrete.csv")
 
 # Loading the saved model
-loaded_model = pickle.load(open(r"C:/Users/User/ML Project cement/trained_model.sav", 'rb'))
+loaded_model = pickle.load(open(model_path, 'rb'))
 
 # Function for prediction
 def strength_prediction(input_data):
@@ -55,7 +63,7 @@ if selected.startswith(strength_icon):
     st.title('Cement Strength Prediction')
 
     # Read the dataset
-    df = pd.read_csv(r"C:\Users\User\ML Project cement\concrete.csv")
+    df = pd.read_csv(csv_path)
 
     # Select the first row as sample input
     sample_input = df.drop('strength', axis=1).iloc[0].values
@@ -77,7 +85,7 @@ if selected.startswith(strength_icon):
 # Data Visualization Page
 elif selected.startswith(visualization_icon):
     # Read the dataset
-    df = pd.read_csv(r"C:\Users\User\ML Project cement\concrete.csv")
+    df = pd.read_csv(csv_path)
 
     # Page title
     st.title('Data Visualization')
