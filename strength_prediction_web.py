@@ -1,21 +1,11 @@
-loaded_model = pickle.load(open("trained_model.sav", 'rb'))
 import pickle
 import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import os
-import pickle
-
-# Get the current directory
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Define the file path
-model_path = os.path.join(current_dir, "trained_model.sav")
-
-# Load the trained model
-loaded_model = pickle.load(open(model_path, 'rb'))
+# Loading the saved model
+loaded_model = pickle.load(open(r"C:/Users/User/ML Project cement/trained_model.sav", 'rb'))
 
 # Function for prediction
 def strength_prediction(input_data):
