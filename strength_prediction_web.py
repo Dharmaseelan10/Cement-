@@ -1,3 +1,4 @@
+loaded_model = pickle.load(open("trained_model.sav", 'rb'))
 import pickle
 import streamlit as st
 import numpy as np
@@ -5,7 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Loading the saved model
-loaded_model = pickle.load(open(r"C:/Users/User/ML Project cement/trained_model.sav", 'rb'))
+loaded_model = pickle.load(open("trained_model.sav", 'rb'))
+
 
 # Function for prediction
 def strength_prediction(input_data):
